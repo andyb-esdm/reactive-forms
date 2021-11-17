@@ -1,0 +1,15 @@
+<div class="d-flex">
+  <form [formGroup]="nameForm">
+    <select formControlName="name">
+      <option value=""></option>
+      <option *ngFor="let option of options" [value]="option.id">
+        {{ option.name }}
+      </option>
+    </select>
+  </form>
+  <div>
+    <strong>form value:</strong>
+    <pre>{{ nameForm.value | json }}</pre>
+  </div>
+  <div><strong>form valid:</strong> {{ nameForm.valid }}</div>
+</div>
