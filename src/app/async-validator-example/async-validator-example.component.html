@@ -1,3 +1,4 @@
+<h2>Async Validator with 'Debounce' Example</h2>
 <form
   autocomplete="off"
   [formGroup]="userNameForm"
@@ -5,7 +6,7 @@
   novalidate
 >
   <div>
-    <label for="userName">Number :</label>
+    <label for="userName">User Name: </label>
     <input type="text" id="userName" formControlName="userName" />
     <div
       *ngIf="
