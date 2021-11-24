@@ -1,0 +1,31 @@
+<form
+  autocomplete="off"
+  [formGroup]="userNameForm"
+  (ngSubmit)="onSubmit()"
+  novalidate
+>
+  <div>
+    <label for="userName">Number :</label>
+    <input type="text" id="userName" formControlName="userName" />
+    <div
+      *ngIf="
+        !userNameControl!.valid &&
+        (userNameControl!.dirty || userNameControl!.touched)
+      "
+    >
+      <div *ngIf="userNameControl!.errors?.['unavailable']">
+        user name is not available
+      </div>
+      <div *ngIf="userNameControl!.errors?.['required']">
+        user name is required
+      </div>
+      <div *ngIf="userNameControl!.pending">Loading ...</div>
+    </div>
+  </div>
+
+  <p>Is Form Valid : {{ userNameForm.valid }}</p>
+
+  <p>
+    <button type="submit" [disabled]="!userNameForm.valid">Submit</button>
+  </p>
+</form>

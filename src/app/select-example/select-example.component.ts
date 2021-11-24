@@ -23,7 +23,7 @@ export class SelectExampleComponent {
 
   constructor(private fb: FormBuilder) {
     this.nameForm = this.fb.group({
-      name: [null, Validators.required],
+      name: [3, Validators.required],
     });
   }
 }
